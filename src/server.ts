@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import mongoose from 'mongoose'
 import 'dotenv/config'
 import jobsRouter from './routes/job.routes'
@@ -10,7 +10,11 @@ app.use(express.urlencoded({extended:true}))
 const PORT = process.env.PORT
 const MONGO_URL = process.env.MONGO_URL! 
 
-app.get('/api/jobs', jobsRouter)
+app.get('/', (request:Request, response:Response) =>{
+    response.send("Hello There")
+})
+
+app.use('/api/jobs', jobsRouter)
 
 mongoose.connect(MONGO_URL).then(()=>{
     console.log('Connected to MongoDB')
