@@ -47,7 +47,10 @@ export const updateJob = async(request:Request<{id:string}>, response:Response) 
 
 export const deleteJob = async(request:Request<{id:string}>, response:Response) => {
     try {
-
+        const id = request.params.id
+        const job = await Job.findByIdAndDelete(id)
+        if(!job) return response.status(404).json({message: "Job does not exist"})
+        return response.status(200).json({message:"Job Deleted Successfully"})
     }catch(error){
         return response.status(500).json({message: "Can not delete job", error})
 
