@@ -44,3 +44,12 @@ export const updateJob = async(request:Request<{id:string}>, response:Response) 
         return response.status(500).json({message: "Can not update job", error})
     }
 }
+
+export const deleteJob = async(request:Request<{id:string}>, response:Response) => {
+    try {
+
+    }catch(error){
+        return response.status(500).json({message: "Can not delete job", error})
+
+    }
+}
