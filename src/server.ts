@@ -1,4 +1,5 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
+import { Request, Response } from 'express-serve-static-core'
 import mongoose from 'mongoose'
 import 'dotenv/config'
 import jobsRouter from './routes/job.routes'
