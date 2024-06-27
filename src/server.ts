@@ -8,7 +8,8 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
-const PORT = process.env.PORT
+
+const PORT = 3000
 const MONGO_URL = process.env.MONGO_URL! 
 
 app.get('/', (request:Request, response:Response) =>{
