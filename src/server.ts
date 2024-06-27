@@ -1,5 +1,7 @@
 import express from 'express'
 import 'dotenv/config'
+import jobsRouter from './routes/job.routes.ts'
+
 const app = express()
 
 app.use(express.json())
