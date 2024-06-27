@@ -2,7 +2,8 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongodb": "^6.7.0"
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.4"
   },
   "name": "workopia-back",
   "version": "1.0.0",
