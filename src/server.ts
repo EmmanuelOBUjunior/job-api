@@ -12,10 +12,9 @@ const MONGO_URL = process.env.MONGO_URL!
 
 app.get('/api/jobs', jobsRouter)
 
-app.listen(PORT, ()=>{
-    console.log(`Server running on port ${PORT}`)
-})
-
 mongoose.connect(MONGO_URL).then(()=>{
-
+    console.log('Connected to MongoDB')
+    app.listen(PORT, ()=>{
+        console.log(`Server running on port ${PORT}`)
+    })
 }).catch((err)=> console.log("Failed to connect to database", err))
