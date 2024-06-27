@@ -13,7 +13,9 @@ export const getJobs = async(request:Request, response:Response) => {
 
 export const createJob = async(request:Request, response:Response) => {
     try {
-        
+        const payload = request.body
+        const job = await Job.create(payload)
+        return response.status(201).json({message: "Job Created Successfully", job})
     } catch (error) {
         return response.status(500).json({message: "Can not create job", error})
     }
