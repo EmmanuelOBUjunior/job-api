@@ -31,3 +31,16 @@ export const getJobById = async(request:Request<{id:string}>, response:Response)
         return response.status(500).json({message: "Can not fetch job", error})
     }
 }
+
+export const updateJob = async(request:Request<{id:string}>, response:Response) => {
+    try {
+        const payload = request.body
+        const id = request.params.id
+        const job = await Job.findByIdAndUpdate(id, payload)
+        if(!job) return response.status(404).json({message: "Job does not exist"})
+        const updatedJob = await Job.findById(id)
+        return response.status(201).json({message:"Job Updated Successfully", updatedJob})
+    } catch (error) {
+        return response.status(500).json({message: "Can not update job", error})
+    }
+}
