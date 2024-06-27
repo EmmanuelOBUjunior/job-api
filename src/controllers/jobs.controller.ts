@@ -20,3 +20,11 @@ export const createJob = async(request:Request, response:Response) => {
         return response.status(500).json({message: "Can not create job", error})
     }
 }
+
+export const getJobById = async(request:Request, response:Response) => {
+    try{
+
+    }catch(error){
+        return response.status(500).json({message: "Can not fetch job", error})
+    }
+}
