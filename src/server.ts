@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 const PORT = process.env.PORT
-const MONGO_URL = process.env.MONGO_URL 
+const MONGO_URL = process.env.MONGO_URL! 
 
 app.get('/api/jobs', jobsRouter)
 
