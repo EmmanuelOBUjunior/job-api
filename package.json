@@ -7,7 +7,7 @@
   },
   "name": "workopia-back",
   "version": "1.0.0",
-  "main": "dist/server.js",
+  "main": "server.js",
   "devDependencies": {
     "@types/express": "^4.17.21",
     "nodemon": "^3.1.4",
