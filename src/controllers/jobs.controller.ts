@@ -21,9 +21,11 @@ export const createJob = async(request:Request, response:Response) => {
     }
 }
 
-export const getJobById = async(request:Request, response:Response) => {
+export const getJobById = async(request:Request<{id:string}>, response:Response) => {
     try{
-
+        const id = request.params.id
+        const job = await Job.findById(id)
+        if(!job) return response.status(404).json({message: "Job does not exist"}) 
     }catch(error){
         return response.status(500).json({message: "Can not fetch job", error})
     }
