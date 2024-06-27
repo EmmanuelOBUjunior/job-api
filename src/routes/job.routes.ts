@@ -4,6 +4,7 @@ import { getJobs } from "../controllers/jobs.controller";
 const router = Router()
 
 router.get('/', getJobs)
+router.get('/', createJob)
 
 
 
