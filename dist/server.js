@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 require("dotenv/config");
+const cors_1 = __importDefault(require("cors"));
 const job_routes_1 = __importDefault(require("./src/routes/job.routes"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
+app.use((0, cors_1.default)());
 const PORT = 3000;
 const MONGO_URL = process.env.MONGO_URL;
 app.get('/', (request, response) => {
