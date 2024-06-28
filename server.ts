@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors())
 
-const PORT = 3000
+const PORT = 5000
 const MONGO_URL = process.env.MONGO_URL! 
 
 app.get('/', (request:Request, response:Response) =>{
