@@ -2,12 +2,14 @@ import express from 'express'
 import { Request, Response } from 'express-serve-static-core'
 import mongoose from 'mongoose'
 import 'dotenv/config'
+import cors from 'cors'
 import jobsRouter from './src/routes/job.routes'
 
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+app.use(cors())
 
 const PORT = 3000
 const MONGO_URL = process.env.MONGO_URL! 
